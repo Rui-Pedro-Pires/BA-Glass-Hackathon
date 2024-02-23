@@ -1,3 +1,4 @@
+-- BEST CASE : LOSS MIN = 0.509 - Linear Regression Model -  Reference 1
 CREATE OR REPLACE MODEL  `ba-glass-hack24por-2001.BA.ML_PTM_1`
 OPTIONS
   (model_type='linear_reg',
@@ -10,6 +11,7 @@ FROM
 WHERE
   PTM_A IS NOT NULL;
 
+-- INCONCLUSIVE CASE : LOSS MIN = 1.7 - Linear Regression Model all References
 CREATE OR REPLACE MODEL  `ba-glass-hack24por-2001.BA.ML_PTMA`
 OPTIONS
   (model_type='linear_reg',
@@ -22,6 +24,7 @@ FROM
 WHERE
   PTM_A IS NOT NULL;
 
+-- WORST CASE : LOSS MIN = 1.7 - Deep Neural Regression - Reference 1
 CREATE OR REPLACE MODEL  `ba-glass-hack24por-2001.BA.ML_PTM_1`
 OPTIONS
   (model_type='DNN_REGRESSOR',
