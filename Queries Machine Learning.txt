@@ -1,0 +1,34 @@
+CREATE OR REPLACE MODEL  `ba-glass-hack24por-2001.BA.ML_PTM_1`
+OPTIONS
+  (model_type='linear_reg',
+  input_label_cols=['PTM_A'],
+  optimize_strategy='batch_gradient_descent') AS
+SELECT
+  *
+FROM
+  `ba-glass-hack24por-2001.BA.CMTD_1`
+WHERE
+  PTM_A IS NOT NULL;
+
+CREATE OR REPLACE MODEL  `ba-glass-hack24por-2001.BA.ML_PTMA`
+OPTIONS
+  (model_type='linear_reg',
+  input_label_cols=['PTM_A'] ,
+  optimize_strategy='batch_gradient_descent') AS
+SELECT
+  *
+FROM
+  `ba-glass-hack24por-2001.BA.CMTD`
+WHERE
+  PTM_A IS NOT NULL;
+
+CREATE OR REPLACE MODEL  `ba-glass-hack24por-2001.BA.ML_PTM_1`
+OPTIONS
+  (model_type='DNN_REGRESSOR',
+  input_label_cols=['PTM_A']) AS
+SELECT
+  *
+FROM
+  `ba-glass-hack24por-2001.BA.CMTD_1`
+WHERE
+  PTM_A IS NOT NULL;
